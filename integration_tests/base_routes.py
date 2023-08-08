@@ -428,6 +428,66 @@ async def file_download_async():
     return serve_file(file_path)
 
 
+@app.get("/sync/file/download_pdf")
+def sync_file_download_pdf():
+    file_path = os.path.join(current_file_path, "downloads", "test_pdf.pdf")
+    return serve_file(file_path)
+
+
+@app.get("/async/file/download_pdf")
+async def file_download_async_pdf():
+    file_path = os.path.join(current_file_path, "downloads", "test_pdf.pdf")
+    return serve_file(file_path)
+
+
+@app.get("/sync/file/download_image")
+def sync_file_download_image():
+    file_path = os.path.join(current_file_path, "downloads", "test_image.tiff")
+    return serve_file(file_path)
+
+
+@app.get("/async/file/download_image")
+async def file_download_async_image():
+    file_path = os.path.join(current_file_path, "downloads", "test_image.tiff")
+    return serve_file(file_path)
+
+
+@app.get("/sync/file/download_docx")
+def sync_file_download_docx():
+    file_path = os.path.join(current_file_path, "downloads", "test_docx.docx")
+    return serve_file(file_path)
+
+
+@app.get("/async/file/download_docx")
+async def file_download_async_docx():
+    file_path = os.path.join(current_file_path, "downloads", "test_docx.docx")
+    return serve_file(file_path)
+
+
+@app.get("/sync/file/download_mislabeled")
+def sync_file_download_mislabeled():
+    file_path = os.path.join(current_file_path, "downloads", "test_mislabeled.iff")
+    return serve_file(file_path)
+
+
+@app.get("/async/file/download_mislabeled")
+async def file_download_async_mislabeled():
+    file_path = os.path.join(current_file_path, "downloads", "test_mislabeled.iff")
+    return serve_file(file_path)
+
+
+@app.get("/sync/file/download_unknown")
+def sync_file_download_unknown():
+    file_path = os.path.join(current_file_path, "downloads", "test_unknown.strings")
+    return serve_file(file_path)
+
+
+@app.get("/async/file/download_unknown")
+async def file_download_async_unknown():
+    file_path = os.path.join(current_file_path, "downloads", "test_unknown.strings")
+    return serve_file(file_path)
+
+
 # Queries
 
 

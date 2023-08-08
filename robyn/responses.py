@@ -1,4 +1,5 @@
 import json
+import magic
 from typing import Any, Dict
 
 
@@ -21,10 +22,12 @@ def serve_file(file_path: str) -> Dict[str, Any]:
 
     :param file_path str: file path to serve as a response
     """
-
     return {
         "file_path": file_path,
-        "headers": {"Content-Disposition": "attachment"},
+        "headers": {
+            "Content-Disposition": "attachment",
+            "Content-Type": magic.from_file(file_path, mime=True),
+        },
     }
 
 
