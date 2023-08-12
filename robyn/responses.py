@@ -18,15 +18,18 @@ def serve_html(file_path: str) -> Dict[str, Any]:
 
 def serve_file(file_path: str) -> Dict[str, Any]:
     """
-    This function will help in serving a file
+    This function 1will help in serving a file
 
     :param file_path str: file path to serve as a response
     """
+    t = magic.from_file(file_path, mime=True)
+    if t is None:
+        pass
     return {
         "file_path": file_path,
         "headers": {
             "Content-Disposition": "attachment",
-            "Content-Type": magic.from_file(file_path, mime=True),
+            "Content-Type": t,
         },
     }
 
