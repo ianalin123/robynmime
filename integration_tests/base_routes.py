@@ -478,13 +478,13 @@ async def file_download_async_mislabeled():
 
 @app.get("/sync/file/download_unknown")
 def sync_file_download_unknown():
-    file_path = os.path.join(current_file_path, "downloads", "test_unknown.strings")
+    file_path = os.path.join(current_file_path, "downloads", "test_unknown.zyxw")
     return serve_file(file_path)
 
 
 @app.get("/async/file/download_unknown")
 async def file_download_async_unknown():
-    file_path = os.path.join(current_file_path, "downloads", "test_unknown.strings")
+    file_path = os.path.join(current_file_path, "downloads", "test_unknown.zyxw")
     return serve_file(file_path)
 
 

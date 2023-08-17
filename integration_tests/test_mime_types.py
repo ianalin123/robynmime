@@ -50,7 +50,7 @@ def test_unknown_type(function_type: str, session):
     r = get(f"/{function_type}/file/download_unknown")
     assert r.headers["Content-Type"] == magic.from_file(
         os.path.join(
-            pathlib.Path(__file__).parent.resolve(), "downloads", "test_unknown.strings"
+            pathlib.Path(__file__).parent.resolve(), "downloads", "test_unknown.zyxw"
         ),
         mime=True,
     )
